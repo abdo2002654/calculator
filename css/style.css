@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bs-light: #f3f4f6;
+  --bs-dark: #374151;
+
+  --bs-light-red: #fecaca;
+  --bs-base-red: #ef4444;
+  --bs-dark-red: #991b1b;
+
+  --bs-light-blue: #bfdbfe;
+  --bs-base-blue: #3b82f6;
+  --bs-dark-blue: #1e40af;
+
+  --bs-light-yellow: #fde68a;
+  --bs-base-yellow: #fbbf24;
+  --bs-dark-yellow: #d97706;
+
+  --bs-light-green: #a7f3d0;
+  --bs-base-green: #10b981;
+  --bs-dark-green: #047857;
+}
+@font-face {
+  font-family: comfortaa;
+  src: url("../webfonts/Comfortaa\ Regular\ 400.ttf");
+}
+@font-face {
+  font-family: adlam;
+  src: url("../webfonts/ADLaMDisplay-Regular.ttf");
+}
+body {
+  background: rgb(0, 37, 37) !important;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.calculator {
+  padding: 20px;
+  background: #ffffff35;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+.calculator-header {
+  background: transparent;
+  padding: 10px;
+  font-family: comfortaa;
+  color: #eee;
+  font-weight: 900;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+}
+.calculator-header span {
+  color: var(--bs-base-yellow);
+}
+.calculator-header .error {
+  background: var(--bs-light-red);
+  font-size: 16px;
+  margin-left: auto;
+  height: 40px;
+  width: 100px;
+  border-radius: 2px;
+  color: var(--bs-dark-red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: adlam;
+  font-weight: 100;
+}
+.result-screen {
+  max-width: 320px;
+  height: 60px;
+  background: #00000075;
+  border-radius: 10px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  color: #aaa;
+  font-size: 22px;
+  font-family: adlam;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background: #00000075;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+}
+.buttons > * {
+  height: 60px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 900;
+  font-family: adlam;
+  color: #333;
+  border: none;
+}
+.buttons .number {
+  width: 60px;
+  background: var(--bs-light-yellow);
+  box-shadow: 2px 3px 0px 0px var(--bs-base-yellow);
+}
+.buttons .number:active {
+  background: var(--bs-base-yellow) !important;
+}
+.buttons .operation {
+  background: var(--bs-base-blue);
+  box-shadow: 2px 3px 0px 0px var(--bs-dark-blue);
+  color: #eee;
+}
+.buttons .operation:active {
+  background: var(--bs-dark-blue);
+  box-shadow: none;
+}
+.buttons .operation.reset,
+.buttons .operation.equals {
+  grid-column: span 2;
+}
+.buttons .operation.equals,
+.buttons .operation.delete {
+  background: var(--bs-base-red);
+  box-shadow: 2px 3px 0px 0px var(--bs-dark-red);
+}
